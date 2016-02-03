@@ -23,7 +23,7 @@ Pasta onde ficarão as contas. Cada arquivo refere-se à um provedor diferente.
   <smtp.server.com> <465> <ssl/no_ssl> <starttls/no_starttls>
   ```
  
-  - Conteúdo: Dentro do arquivo devem ficar as contas/senhas no formato: 
+  - Dentro de cada arquivo devem ficar as contas/senhas referente aos provedores, no formato: 
   
   ```sh
   login@server.com\tpassword.
