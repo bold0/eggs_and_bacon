@@ -27,7 +27,7 @@ def get_credentials():
 
         if starttls == 'starttls':
             starttls = True
-        elif starttls == ' no_starttls':
+        elif starttls == 'no_starttls':
             starttls = False
 
         with open(_fp, 'r') as r:
