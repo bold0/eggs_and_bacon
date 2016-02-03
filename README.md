@@ -18,6 +18,7 @@
 #### /accounts 
 Pasta onde ficarão as contas. Cada arquivo refere-se à um provedor diferente.
   - Esquema: o nome do arquivo é a configuração do servidor SMTP.
+  
   ```sh
   <smtp.server.com> <465> <ssl/no_ssl> <starttls/no_starttls>
   ```
