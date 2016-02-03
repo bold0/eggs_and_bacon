@@ -61,18 +61,24 @@ def worker(work_queue):
 if __name__ == "__main__":
     queue = Queue()
     pool = Pool(PROCESSES, worker, (queue,))
+    credentials = get_credentials()
+    subject = get_subject()
+    content = get_content()
+    recipients = get_recipients()
+    attachments = get_attachments()
+
     for x in range(0, HOW_MANY_LOGINS):
-        credential = random.choice(get_credentials())
+        credential = random.choice(credentials)
         args = {'smtp_server': credential.get('smtp_server'),
                 'port': credential.get('port'),
                 'username': credential.get('username'),
                 'password': credential.get('password'),
                 'ssl': credential.get('ssl'),
                 'starttls': credential.get('starttls'),
-                'subject': get_subject(),
-                'content': get_content(),
-                'recipients': get_recipients(),
-                'attachments': get_attachments()}
+                'subject': subject,
+                'content': content,
+                'recipients': recipients,
+                'attachments': attachments}
         queue.put(args)
 
     while not queue.empty():
