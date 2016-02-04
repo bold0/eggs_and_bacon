@@ -80,6 +80,7 @@ if __name__ == "__main__":
                 'recipients': recipients,
                 'attachments': attachments}
         queue.put(args)
-
+    
+    time.sleep(5)
     while not queue.empty():
         time.sleep(1)
